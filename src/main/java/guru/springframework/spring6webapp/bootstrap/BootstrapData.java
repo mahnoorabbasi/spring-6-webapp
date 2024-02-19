@@ -52,6 +52,10 @@ public class BootstrapData implements CommandLineRunner {
 
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
+        //adding book to the author,
+        //but we also need to add author to the book for many to many
+        dddSaved.getAuthors().add(ericSaved);
+        noEJBSaved.getAuthors().add(rodSaved);
 
         Publisher publisher = new Publisher();
         publisher.setPublisherName("My Publisher");
