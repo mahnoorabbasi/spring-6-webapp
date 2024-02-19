@@ -1,9 +1,8 @@
 package guru.springframework.spring6webapp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -11,6 +10,10 @@ public class Publisher {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String publisherName, address, city, state, zip;
+
+    @OneToMany(mappedBy = "publisher")
+    //a book can have only one publish, but a publisher can publisher many books
+    private Set<Book> books;
 
     public Long getId() {
         return id;
