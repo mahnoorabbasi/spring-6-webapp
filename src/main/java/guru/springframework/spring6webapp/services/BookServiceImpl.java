@@ -5,11 +5,11 @@ import guru.springframework.spring6webapp.repositories.BookRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BokServiceImpl implements BokService {
+public class BookServiceImpl implements BookService {
 
     private final BookRepository bookRepository;
 
-    public BokServiceImpl(BookRepository bookRepository) {
+    public BookServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
